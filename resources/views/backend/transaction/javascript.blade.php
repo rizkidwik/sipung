@@ -112,6 +112,7 @@
 
         trData = (data, index) => {
             let dataItem = {
+                'index': index,
                 'item_id': data.id,
                 'name': data.name,
                 'amount': data.amount,
@@ -119,9 +120,9 @@
             }
 
             let html = `
-                    <tr data-id="${data.id}">
-                        <input type="hidden" value="${data.id}" name="item[${data.id}][id]">
-                        <input type="hidden" value="${data.amount}" name="item[${data.id}][amount]">
+                    <tr data-id="${data.id}" data-index=${index}>
+                        <input type="hidden" value="${data.id}" name="item[${data.id}-${index}][id]">
+                        <input type="hidden" value="${data.amount}" name="item[${data.id}-${index}][amount]">
                         <td>${index}</td>
                         <td>${data.name}</td>
                         <td>${data.amount ? HELPER.toRp(data.amount) : '-'}</td>
@@ -226,7 +227,7 @@
             let data = $(el).data('item')
             let bodyEl = data.type == 1 ? "fix-body" : "free-body"
 
-            $(`#${bodyEl}`).find(`[data-id='${data.item_id}']`).remove()
+            $(`#${bodyEl}`).find(`[data-index='${data.index}']`).remove()
         }
 
         resetFormItem = () => {

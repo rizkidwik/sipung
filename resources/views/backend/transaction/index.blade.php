@@ -26,7 +26,7 @@
                 <hr>
 
                 <div class="row my-3 d-none" id="transaction-container">
-                    <div class="col-6">
+                    <div class="col my-3">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h5>Rutin</h5>
                         </div>
@@ -44,7 +44,7 @@
                             </table>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col my-3">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h5>Insidental</h5>
                             <div>
