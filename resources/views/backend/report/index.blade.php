@@ -15,7 +15,9 @@
                             <th>No</th>
                             <th>Nama</th>
                             <th>Total</th>
+                            <th>Petugas</th>
                             <th>Tanggal</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>

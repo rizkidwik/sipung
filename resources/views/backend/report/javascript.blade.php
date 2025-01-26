@@ -31,12 +31,28 @@
                         }
                     },
                     {
+                        data: 'user.name',
+                        name: 'user.name',
+                    },
+                    {
                         data: 'created_at',
                         name: 'created_at',
                         render: (data) => {
                             return moment(data).format('DD/MM/YYYY HH:mm')
                         }
-                    }
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        orderable: false,
+                        searchable: false,
+                        render: (data, type, row) => {
+                            let routeUrl = "{{ route('transaction.print', ':id') }}",
+                            printUrl = routeUrl.replace(':id', row.id);
+                            return `<a target="_blank" href="${printUrl}" class="btn btn-primary btn-sm me-2">
+                                <i class="fas fa-print"></i> </a>`
+                        }
+                    },
                 ]
             });
         });
